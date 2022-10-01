@@ -1,0 +1,24 @@
+include         /usr/local/etc/openldap/schema/core.schema
+include         /usr/local/etc/openldap/schema/cosine.schema
+include         /usr/local/etc/openldap/schema/inetorgperson.schema
+include         /usr/local/etc/openldap/schema/collective.schema
+include         /usr/local/etc/openldap/schema/corba.schema
+include         /usr/local/etc/openldap/schema/dsee.schema
+include         /usr/local/etc/openldap/schema/duaconf.schema
+include         /usr/local/etc/openldap/schema/java.schema
+include         /usr/local/etc/openldap/schema/misc.schema
+include         /usr/local/etc/openldap/schema/namedobject.schema
+include         /usr/local/etc/openldap/schema/nis.schema
+include         /usr/local/etc/openldap/schema/openldap.schema
+include         /usr/local/etc/openldap/schema/pmi.schema
+
+pidfile         /run/openldap/slapd.pid
+argsfile        /run/openldap/slapd.args
+modulepath      /usr/local/lib/openldap
+moduleload      argon2
+password-hash   {ARGON2}
+
+database config
+rootpw {ARGON2}$argon2id$v=19$m=65536,t=2,p=1$ikAZCpbjZ/KTra/BrrO9yQ$f4DcIFDAp6vU9ErVdpXFYV32b6PrgHbcnghjhhWZlEA
+#secret
+database monitor
